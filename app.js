@@ -15,27 +15,53 @@ function randomItem (listOfItems) {
     return listOfItems[Math.floor(Math.random()*listOfItems.length)];
 }
 
-function initialItinerary (destination, restaurant, transportation, entertainment) {
+function selectDestination(destination) {
     let randomDestinations = randomItem(destination);
-    let randomRestaurant = randomItem(restaurant);
-    let randomTransport = randomItem(transportation);
-    let randomEntertainment = randomItem(entertainment);
-    console.log("Initial itinerary: " + randomDestinations + "/" + randomRestaurant + "/" + randomTransport + "/" + randomEntertainment);
-}
-
-/* function reselectItinerary() {
     let finalDestination;
-    let finalRestaurant;
-    let finalTransport;
-    let finalEntertainment;
-    if (confirm(randomDesinations)) {
+    if (confirm(randomDestinations)) {
         finalDestination = randomDestinations;
     } 
     else {
-        randomDestinations = randomItem(destination);
-        confirm(randomDestinations);
+        finalDestination = randomItem(destination);
+    }
+    return finalDestination;
+}
+
+function selectRestaurant(restaurant) {
+    let randomRestaurant = randomItem(restaurant);
+    let finalRestaurant;
+    if (confirm(randomRestaurant)) {
+        finalRestaurant = randomRestaurant;
     } 
-} */
+    else {
+        finalRestaurant = randomItem(restaurant);
+    }
+    return finalRestaurant;
+}
+
+function selectRestaurant(transportation) {
+    let randomTransport = randomItem(transportation);
+    let finalTransport;
+    if (confirm(randomTransport)) {
+        finalTransport = randomTransport;
+    } 
+    else {
+        finalTransport = randomItem(transportation);
+    }
+    return finalTransport;
+}
+
+function selectRestaurant(entertainment) {
+    let randomEntertainment = randomItem(entertainment);
+    let finalEntertainment;
+    if (confirm(randomEntertainment)) {
+        finalEntertainment = randomEntertainment;
+    } 
+    else {
+        finalEntertainment = randomItem(entertainment);
+    }
+    return finalEntertainment;
+}
 
 /*======================================================================*/
 
@@ -59,4 +85,4 @@ let entertainment = ["Movie", "Sight-seeing tour", "Opera", "Live Theater", "Dan
 
 /*======================================================================*/
 
-initialItinerary(destination, restaurant, transportation, entertainment);
+console.log(selectDestination(destination));
