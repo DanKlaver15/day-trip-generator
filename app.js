@@ -1,18 +1,12 @@
 "use strict";
 //Day Trip Generator
-/* 1. create an array of destinations
-2. create an array of restaurants
-3. create an array of transportation
-4. create an array of entertainment
-5. create a function that will select one item from an array at random
-6. if the user doesn't like the random selection chosen, they can re-select from that category
-7. if the user is happy with their trip, they can confirm it is "complete" (JS confirm box?)
-8. display the confirmed trip in the console  */
 
 //Function to randomly select from an array
 function randomItem (listOfItems) {
     return listOfItems[Math.floor(Math.random()*listOfItems.length)];
 }
+
+/*======================================================================*/
 
 //Function to randomly select a destination from an array
 function selectDestination(destination) {
@@ -23,6 +17,8 @@ function selectDestination(destination) {
     return randomDestinations;
 }
 
+/*======================================================================*/
+
 //Function to randomly select a restaurant from an array
 function selectRestaurant(restaurant) {
     let randomRestaurant = randomItem(restaurant);
@@ -31,6 +27,8 @@ function selectRestaurant(restaurant) {
     }
     return randomRestaurant;
 }
+
+/*======================================================================*/
 
 //Function to randomly select a mode of transportation from an array
 function selectTransport(transportation) {
@@ -41,6 +39,8 @@ function selectTransport(transportation) {
     return randomTransport;
 }
 
+/*======================================================================*/
+
 //Function to randomly select a form of entertainment from an array
 function selectEntertainment(entertainment) {
     let randomEntertainment = randomItem(entertainment);
@@ -50,6 +50,9 @@ function selectEntertainment(entertainment) {
     return randomEntertainment;
 }
 
+/*======================================================================*/
+
+//Function to create each array and combine them for final confirmation and console output
 function finalItinerary() {
     let destination = ["Bali", "Hawaii", "Paris", "London", "Rome", "Cayman Islands", "Munich"];
     let restaurant = ["Hard Rock Cafe", "McDonald's", "Taco Bell", "Chili's", "Ruth Chris"];
