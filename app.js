@@ -39,7 +39,7 @@ function selectRestaurant(restaurant) {
     return finalRestaurant;
 }
 
-function selectRestaurant(transportation) {
+function selectTransport(transportation) {
     let randomTransport = randomItem(transportation);
     let finalTransport;
     if (confirm(randomTransport)) {
@@ -51,7 +51,7 @@ function selectRestaurant(transportation) {
     return finalTransport;
 }
 
-function selectRestaurant(entertainment) {
+function selectEntertainment(entertainment) {
     let randomEntertainment = randomItem(entertainment);
     let finalEntertainment;
     if (confirm(randomEntertainment)) {
@@ -61,6 +61,10 @@ function selectRestaurant(entertainment) {
         finalEntertainment = randomItem(entertainment);
     }
     return finalEntertainment;
+}
+
+function finalItinerary() {
+
 }
 
 /*======================================================================*/
