@@ -63,8 +63,18 @@ function selectEntertainment(entertainment) {
     return finalEntertainment;
 }
 
-function finalItinerary() {
-
+function finalItinerary(destination, restaurant, transportation, entertainment) {
+    let completeDestination = selectDestination(destination);
+    let completeRestaurant = selectRestaurant(restaurant);
+    let completeTransport = selectTransport(transportation);
+    let completeEntertainment = selectEntertainment(entertainment);
+    let itineraryCombined = "Your final itinerary is: " + completeDestination + "/" + completeRestaurant + "/" + completeTransport + "/" + completeEntertainment;
+    if (confirm(itineraryCombined)) {
+        console.log(itineraryCombined);
+    }
+    else {
+    console.log("Please refresh the page to choose a new itinerary.");
+    }
 }
 
 /*======================================================================*/
@@ -89,4 +99,4 @@ let entertainment = ["Movie", "Sight-seeing tour", "Opera", "Live Theater", "Dan
 
 /*======================================================================*/
 
-console.log(selectDestination(destination));
+finalItinerary(destination, restaurant, transportation, entertainment);
