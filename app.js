@@ -8,46 +8,13 @@ function randomItem (listOfItems) {
 
 /*======================================================================*/
 
-//Function to randomly select a destination from an array
-function selectDestination(destination) {
-    let randomDestinations = randomItem(destination);
-    while (!confirm(randomDestinations)) {
-        randomDestinations = randomItem(destination);
+//Function to randomly select from a list of items and confirm or re-select
+function selectRandom(list) {
+    let randomSelection = randomItem(list);
+    while (!confirm(randomSelection)) {
+        randomSelection = randomItem(list);
     } 
-    return randomDestinations;
-}
-
-/*======================================================================*/
-
-//Function to randomly select a restaurant from an array
-function selectRestaurant(restaurant) {
-    let randomRestaurant = randomItem(restaurant);
-    while (!confirm(randomRestaurant)) {
-        randomRestaurant = randomItem(restaurant);
-    }
-    return randomRestaurant;
-}
-
-/*======================================================================*/
-
-//Function to randomly select a mode of transportation from an array
-function selectTransport(transportation) {
-    let randomTransport = randomItem(transportation);
-    while (!confirm(randomTransport)) {
-        randomTransport = randomItem(transportation);
-    }     
-    return randomTransport;
-}
-
-/*======================================================================*/
-
-//Function to randomly select a form of entertainment from an array
-function selectEntertainment(entertainment) {
-    let randomEntertainment = randomItem(entertainment);
-    while (!confirm(randomEntertainment)) {
-        randomEntertainment = randomItem(entertainment);
-    } 
-    return randomEntertainment;
+    return randomSelection;
 }
 
 /*======================================================================*/
@@ -58,10 +25,10 @@ function finalItinerary() {
     let restaurant = ["Hard Rock Cafe", "McDonald's", "Taco Bell", "Chili's", "Ruth Chris"];
     let transportation = ["Bus", "Train", "Taxi", "Airplane", "Boat"];
     let entertainment = ["Movie", "Sight-seeing tour", "Opera", "Live Theater", "Dancing"];
-    let completeDestination = selectDestination(destination);
-    let completeRestaurant = selectRestaurant(restaurant);
-    let completeTransport = selectTransport(transportation);
-    let completeEntertainment = selectEntertainment(entertainment);
+    let completeDestination = selectRandom(destination);
+    let completeRestaurant = selectRandom(restaurant);
+    let completeTransport = selectRandom(transportation);
+    let completeEntertainment = selectRandom(entertainment);
     let itineraryCombined = "Your final itinerary is: " + completeDestination + "/" + completeRestaurant + "/" + completeTransport + "/" + completeEntertainment;
     if (confirm(itineraryCombined)) {
         console.log(itineraryCombined);
