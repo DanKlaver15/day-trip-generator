@@ -10,60 +10,51 @@
 8. display the confirmed trip in the console  */
 
 //Function to randomly select from an array
-
 function randomItem (listOfItems) {
     return listOfItems[Math.floor(Math.random()*listOfItems.length)];
 }
 
+//Function to randomly select a destination from an array
 function selectDestination(destination) {
     let randomDestinations = randomItem(destination);
-    let finalDestination;
-    if (confirm(randomDestinations)) {
-        finalDestination = randomDestinations;
+    while (!confirm(randomDestinations)) {
+        randomDestinations = randomItem(destination);
     } 
-    else {
-        finalDestination = randomItem(destination);
-    }
-    return finalDestination;
+    return randomDestinations;
 }
 
+//Function to randomly select a restaurant from an array
 function selectRestaurant(restaurant) {
     let randomRestaurant = randomItem(restaurant);
-    let finalRestaurant;
-    if (confirm(randomRestaurant)) {
-        finalRestaurant = randomRestaurant;
-    } 
-    else {
-        finalRestaurant = randomItem(restaurant);
+    while (!confirm(randomRestaurant)) {
+        randomRestaurant = randomItem(restaurant);
     }
-    return finalRestaurant;
+    return randomRestaurant;
 }
 
+//Function to randomly select a mode of transportation from an array
 function selectTransport(transportation) {
     let randomTransport = randomItem(transportation);
-    let finalTransport;
-    if (confirm(randomTransport)) {
-        finalTransport = randomTransport;
-    } 
-    else {
-        finalTransport = randomItem(transportation);
-    }
-    return finalTransport;
+    while (!confirm(randomTransport)) {
+        randomTransport = randomItem(transportation);
+    }     
+    return randomTransport;
 }
 
+//Function to randomly select a form of entertainment from an array
 function selectEntertainment(entertainment) {
     let randomEntertainment = randomItem(entertainment);
-    let finalEntertainment;
-    if (confirm(randomEntertainment)) {
-        finalEntertainment = randomEntertainment;
+    while (!confirm(randomEntertainment)) {
+        randomEntertainment = randomItem(entertainment);
     } 
-    else {
-        finalEntertainment = randomItem(entertainment);
-    }
-    return finalEntertainment;
+    return randomEntertainment;
 }
 
-function finalItinerary(destination, restaurant, transportation, entertainment) {
+function finalItinerary() {
+    let destination = ["Bali", "Hawaii", "Paris", "London", "Rome", "Cayman Islands", "Munich"];
+    let restaurant = ["Hard Rock Cafe", "McDonald's", "Taco Bell", "Chili's", "Ruth Chris"];
+    let transportation = ["Bus", "Train", "Taxi", "Airplane", "Boat"];
+    let entertainment = ["Movie", "Sight-seeing tour", "Opera", "Live Theater", "Dancing"];
     let completeDestination = selectDestination(destination);
     let completeRestaurant = selectRestaurant(restaurant);
     let completeTransport = selectTransport(transportation);
@@ -77,26 +68,4 @@ function finalItinerary(destination, restaurant, transportation, entertainment) 
     }
 }
 
-/*======================================================================*/
-
-//Destination
-let destination = ["Bali", "Hawaii", "Paris", "London", "Rome", "Cayman Islands", "Munich"];
-
-/*======================================================================*/
-
-//Restaurants
-let restaurant = ["Hard Rock Cafe", "McDonald's", "Taco Bell", "Chili's", "Ruth Chris"];
-
-/*======================================================================*/
-
-//Transportation
-let transportation = ["Bus", "Train", "Taxi", "Airplane", "Boat"];
-
-/*======================================================================*/
-
-//Entertainment
-let entertainment = ["Movie", "Sight-seeing tour", "Opera", "Live Theater", "Dancing"];
-
-/*======================================================================*/
-
-finalItinerary(destination, restaurant, transportation, entertainment);
+finalItinerary();
